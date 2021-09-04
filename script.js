@@ -8,8 +8,43 @@ function calcular() {
     console.log("Calculando...");
     let adultos = inputAdultos.value;
     let criancas = inputCriancas.value;
+    let duracao = inputDuracao.value;
 
-    let qdtTotalCarne = 400 * adultos + (400 / 2 * criancas);
-    console.log(qdtTotalCarne);
+    let qdtTotalCarne = carnePP(duracao) * adultos + (carnePP(duracao) / 2 * criancas);
+    let qdtTotalCerveja = cerverjaPP(duracao) * adultos;
+    let qdtTotalBebidas = bebidasPP(duracao) * adultos + (bebidasPP(duracao) / 2 * criancas);
 
+    resultado.innerHTML = `<p>${qdtTotalCarne/1000}Kg de Carne</p>`
+    resultado.innerHTML += `<p>${Math.ceil(qdtTotalCerveja/355)}Latas de Cerveja</p>`
+    resultado.innerHTML += `<p>${Math.ceil(qdtTotalBebidas/2000)}Pet's 2LT de Bebidas</p>`
+}
+
+function carnePP(duracao) {
+    let carne = 400;
+    if (duracao >= 6) {
+        return 650;
+
+    } else {
+        return 400;
+    }
+}
+
+function cerverjaPP(duracao) {
+    let carne = 400;
+    if (duracao >= 6) {
+        return 2000;
+
+    } else {
+        return 1200;
+    }
+}
+
+function bebidasPP(duracao) {
+    let carne = 400;
+    if (duracao >= 6) {
+        return 1500;
+
+    } else {
+        return 1000;
+    }
 }
