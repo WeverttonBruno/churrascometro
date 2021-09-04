@@ -90,3 +90,14 @@ button:hover {
     background-color: white;
     color: black;
 }
+
+.rodape {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-color: black;
+    z-index: 1;
+    font-family: Arial, Helvetica, sans-serif;
+}
